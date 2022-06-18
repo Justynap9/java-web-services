@@ -9,7 +9,7 @@ import java.util.List;
 @ToString
 @Getter
 @Setter
-public class Users {
+public class User {
 
     private Long userId;
     private String firstName;

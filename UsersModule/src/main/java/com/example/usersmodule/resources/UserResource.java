@@ -1,7 +1,7 @@
 package com.example.usersmodule.resources;
 
 import com.example.usersmodule.models.RegistrationDetails;
-import com.example.usersmodule.models.Users;
+import com.example.usersmodule.models.User;
 import com.example.usersmodule.models.Rating;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -33,8 +33,8 @@ public class UserResource {
     }
 
     @GetMapping("user/{id}")
-    public ResponseEntity<Users> getUser(@PathVariable Long id) {
-        Optional<Users> itemById = userRepo.findById(id);
+    public ResponseEntity<User> getUser(@PathVariable Long id) {
+        Optional<User> itemById = userRepo.findById(id);
         if (itemById.isPresent()) {
             return new ResponseEntity<>(itemById.get(), HttpStatus.OK);
         } else {
@@ -43,7 +43,7 @@ public class UserResource {
         }
     }
     @PostMapping("/users")
-    public ResponseEntity createUser(@RequestBody Users user) {
+    public ResponseEntity createUser(@RequestBody User user) {
         userRepo.saveAndFlush(user);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
@@ -106,7 +106,7 @@ public class UserResource {
 
     @GetMapping("users/{id}/ratings")
     public ResponseEntity<List> getUsersRatings(@PathVariable Long id) {
-        Optional<Users> itemById = userRepo.findById(id);
+        Optional<User> itemById = userRepo.findById(id);
         if (itemById.isPresent()) {
             return new ResponseEntity<List>(itemById.get().getRatings(), HttpStatus.OK);
         } else {

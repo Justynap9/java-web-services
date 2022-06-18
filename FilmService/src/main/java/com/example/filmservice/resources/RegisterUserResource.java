@@ -1,6 +1,6 @@
 package com.example.filmservice.resources;
 
-import com.example.filmservice.models.Users;
+import com.example.filmservice.models.User;
 import com.example.filmservice.requests.RegisterUserRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -18,7 +18,7 @@ public class RegisterUserResource {
 
     @PostMapping("/register")
     public ResponseEntity createUser(@RequestBody RegisterUserRequest registeruserRequest) {
-        Users user = new Users(registeruserRequest.getUserId(), registeruserRequest.getFirstName(),
+        User user = new User(registeruserRequest.getUserId(), registeruserRequest.getFirstName(),
                 registeruserRequest.getLastName(), registeruserRequest.getLogin(),
                 registeruserRequest.getBirthDate(), registeruserRequest.getActive(), registeruserRequest.getRegDetails(),
                 registeruserRequest.getRatings());
