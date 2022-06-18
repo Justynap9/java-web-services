@@ -1,6 +1,6 @@
-package com.example.moviecatalogservice.resources;
+package com.example.filmservice.resources;
 
-import com.example.moviecatalogservice.models.Movie;
+import com.example.filmservice.models.Movie;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

@@ -1,7 +1,7 @@
-package com.example.moviecatalogservice.resources;
+package com.example.filmservice.resources;
 
-import com.example.moviecatalogservice.models.Genre;
-import com.example.moviecatalogservice.models.Movie;
+import com.example.filmservice.models.Genre;
+import com.example.filmservice.models.Movie;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -76,6 +76,8 @@ public class CatalogResource {
         genreRepo.deleteById(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+
 
 
 }

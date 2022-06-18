@@ -1,4 +1,4 @@
-package com.example.moviecatalogservice.models;
+package com.example.filmservice.models;
 
 import lombok.*;
 
