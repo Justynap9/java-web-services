@@ -28,7 +28,7 @@ public class Users {
     private RegistrationDetails regDetails;
 
     @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ratingId")
+    @JoinColumn(name = "userId")
     private List<Rating> ratings;
 
     public Long getUserId() {

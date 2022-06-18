@@ -20,7 +20,7 @@ public class Rating{
     private Long movieId;
     private Integer score;
     private String review;
-    private String status;
+    private String status = "created";
 
     public Long getRatingId() {
         return ratingId;
@@ -62,11 +62,4 @@ public class Rating{
         this.review = review;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
 }

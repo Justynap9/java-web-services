@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -12,5 +14,9 @@ import lombok.Setter;
 public class RegistrationDetails {
 
     private Long regId;
-    private String regDate;
+    private LocalDateTime regDate = LocalDateTime.now();
+
+    public RegistrationDetails(Long regId) {
+        this.regId = regId;
+    }
 }

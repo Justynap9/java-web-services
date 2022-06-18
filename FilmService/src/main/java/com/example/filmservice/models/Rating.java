@@ -16,11 +16,11 @@ public class Rating {
     private String review;
     private String status;
 
-    public Rating(Long userId, Long movieId, Integer score, String review, String status) {
+    public Rating(Long userId, Long movieId, Integer score, String review) {
         this.userId = userId;
         this.movieId = movieId;
         this.score = score;
         this.review = review;
-        this.status = status;
+        this.status = "created";
     }
 }

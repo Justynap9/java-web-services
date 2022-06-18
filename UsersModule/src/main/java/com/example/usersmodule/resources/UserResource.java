@@ -88,6 +88,7 @@ public class UserResource {
     public ResponseEntity<List> getRatings(){
         return new ResponseEntity(ratingRepo.findAll(), HttpStatus.OK);
     }
+
     @GetMapping("ratings/{id}")
     public ResponseEntity<Rating> getRating(@PathVariable Long id) {
         Optional<Rating> itemById = ratingRepo.findById(id);
@@ -98,8 +99,9 @@ public class UserResource {
 
         }
     }
-    @PostMapping("/ratings")
-    public ResponseEntity createRating(@RequestBody Rating rating) {
+
+    @PostMapping("ratings")
+    public ResponseEntity createRating(@RequestBody Rating rating){
         ratingRepo.saveAndFlush(rating);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }

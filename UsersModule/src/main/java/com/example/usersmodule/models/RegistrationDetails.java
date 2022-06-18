@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -16,5 +18,9 @@ public class RegistrationDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long regId;
-    private String regDate;
+    private LocalDateTime regDate = LocalDateTime.now();
+
+    public RegistrationDetails(Long regId) {
+        this.regId = regId;
+    }
 }

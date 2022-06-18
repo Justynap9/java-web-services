@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CreateRatingRequest {
-
     private Long userId;
     private Long movieId;
     private Integer score;
