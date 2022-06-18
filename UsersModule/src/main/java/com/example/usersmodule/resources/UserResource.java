@@ -53,16 +53,8 @@ public class UserResource {
         userRepo.deleteById(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-/*
-    @GetMapping("/registration/details")
-    public ResponseEntity<List> getRegDetails(@RequestParam(value = "id", required = false) long id){
-        if (id != null) {
-            return new ResponseEntity(registrationDetailsRepo.findAllById(id), HttpStatus.OK);
-        }
-        return new ResponseEntity(registrationDetailsRepo.findAll(), HttpStatus.OK);
-    }*/
 
-    @GetMapping("registration/{id}")
+    @GetMapping("registration-details/{id}")
     public ResponseEntity<RegistrationDetails> getGenre(@PathVariable Long id) {
         Optional<RegistrationDetails> itemById = registrationRepo.findById(id);
         if (itemById.isPresent()) {
@@ -72,13 +64,13 @@ public class UserResource {
 
         }
     }
-    @PostMapping("/registration")
+    @PostMapping("/registration-details")
     public ResponseEntity createRegistration(@RequestBody RegistrationDetails registration) {
         registrationRepo.saveAndFlush(registration);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @DeleteMapping("registration/{id}")
+    @DeleteMapping("registration-details/{id}")
     public ResponseEntity deleteRegistrationInfo(@PathVariable Long id) {
         registrationRepo.deleteById(id);
         return new ResponseEntity<>(HttpStatus.OK);

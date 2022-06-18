@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class DeleteRatingRequest {
+public class GetRatingRequest {
     private Long userId;
     private Long movieId;
     private Integer score;

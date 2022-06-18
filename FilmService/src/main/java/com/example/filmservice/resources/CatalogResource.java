@@ -25,7 +25,7 @@ public class CatalogResource {
         return new ResponseEntity(movieRepo.findAll(), HttpStatus.OK);
     }
 
-    @GetMapping("movie/{id}")
+    @GetMapping("movies/id/{id}")
     public ResponseEntity<Movie> getMovie(@PathVariable Long id) {
         Optional<Movie> itemById = movieRepo.findById(id);
         if (itemById.isPresent()) {
@@ -35,6 +35,13 @@ public class CatalogResource {
 
         }
     }
+
+    @GetMapping("/movies/title/{title}")
+    public List<Movie> searchByTitle(@PathVariable String title) {
+        List<Movie> itemByTitle = movieRepo.findAllByTitle(title);
+        return movieRepo.findAllByTitle(title);
+    }
+
     @PostMapping("/movies")
     public ResponseEntity createMovie(@RequestBody Movie movie) {
         movieRepo.saveAndFlush(movie);

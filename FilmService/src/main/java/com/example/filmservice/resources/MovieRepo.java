@@ -12,4 +12,5 @@ public interface MovieRepo extends JpaRepository<Movie, Long> {
 
     @Query("SELECT distinct m FROM Movie m join fetch m.genres where m.title = ?1")
     List<Movie> findAllByTitle(String title);
+
 }

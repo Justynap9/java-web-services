@@ -18,7 +18,8 @@ public class CreateRatingResource {
 
     @PostMapping("/create")
     public ResponseEntity createRating(@RequestBody CreateRatingRequest createratingRequest) {
-        Rating rating = new Rating(createratingRequest.getUserId(), createratingRequest.getMovieId(), createratingRequest.getScore(), createratingRequest.getReview());
+        Rating rating = new Rating(createratingRequest.getUserId(), createratingRequest.getMovieId(),
+                createratingRequest.getScore(), createratingRequest.getReview());
         restTemplate.postForEntity("http://localhost:8084/ratings", rating, ResponseEntity.class);
         return new ResponseEntity(HttpStatus.OK);
 
