@@ -9,6 +9,5 @@ import java.util.List;
 
 @Repository
 public interface RatingRepo extends JpaRepository<Rating, Long> {
-    @Query("SELECT distinct r FROM Rating r join fetch r.userId where r.review= ?1")
-    List<Rating> findAllByReview(String review);
+
 }

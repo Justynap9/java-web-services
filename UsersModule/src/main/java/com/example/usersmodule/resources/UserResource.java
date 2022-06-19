@@ -1,7 +1,7 @@
 package com.example.usersmodule.resources;
 
 import com.example.usersmodule.models.RegistrationDetails;
-import com.example.usersmodule.models.Users;
+import com.example.usersmodule.models.User;
 import com.example.usersmodule.models.Rating;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -33,8 +33,8 @@ public class UserResource {
     }
 
     @GetMapping("user/{id}")
-    public ResponseEntity<Users> getUser(@PathVariable Long id) {
-        Optional<Users> itemById = userRepo.findById(id);
+    public ResponseEntity<User> getUser(@PathVariable Long id) {
+        Optional<User> itemById = userRepo.findById(id);
         if (itemById.isPresent()) {
             return new ResponseEntity<>(itemById.get(), HttpStatus.OK);
         } else {
@@ -43,7 +43,7 @@ public class UserResource {
         }
     }
     @PostMapping("/users")
-    public ResponseEntity createUser(@RequestBody Users user) {
+    public ResponseEntity createUser(@RequestBody User user) {
         userRepo.saveAndFlush(user);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
@@ -53,16 +53,8 @@ public class UserResource {
         userRepo.deleteById(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-/*
-    @GetMapping("/registration/details")
-    public ResponseEntity<List> getRegDetails(@RequestParam(value = "id", required = false) long id){
-        if (id != null) {
-            return new ResponseEntity(registrationDetailsRepo.findAllById(id), HttpStatus.OK);
-        }
-        return new ResponseEntity(registrationDetailsRepo.findAll(), HttpStatus.OK);
-    }*/
 
-    @GetMapping("registration/{id}")
+    @GetMapping("registration-details/{id}")
     public ResponseEntity<RegistrationDetails> getGenre(@PathVariable Long id) {
         Optional<RegistrationDetails> itemById = registrationRepo.findById(id);
         if (itemById.isPresent()) {
@@ -72,23 +64,20 @@ public class UserResource {
 
         }
     }
-    @PostMapping("/registration")
+    @PostMapping("/registration-details")
     public ResponseEntity createRegistration(@RequestBody RegistrationDetails registration) {
         registrationRepo.saveAndFlush(registration);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @DeleteMapping("registration/{id}")
+    @DeleteMapping("registration-details/{id}")
     public ResponseEntity deleteRegistrationInfo(@PathVariable Long id) {
         registrationRepo.deleteById(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @GetMapping("/ratings")
-    public ResponseEntity<List> getRatings(@RequestParam(value = "review", required = false) String review){
-        if (review!= null) {
-            return new ResponseEntity(ratingRepo.findAllByReview(review), HttpStatus.OK);
-        }
+    public ResponseEntity<List> getRatings(){
         return new ResponseEntity(ratingRepo.findAll(), HttpStatus.OK);
     }
 
@@ -103,8 +92,8 @@ public class UserResource {
         }
     }
 
-    @PostMapping("/ratings")
-    public ResponseEntity createRating(@RequestBody Rating rating) {
+    @PostMapping("ratings")
+    public ResponseEntity createRating(@RequestBody Rating rating){
         ratingRepo.saveAndFlush(rating);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
@@ -113,5 +102,16 @@ public class UserResource {
     public ResponseEntity deleteRating(@PathVariable Long id) {
         ratingRepo.deleteById(id);
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @GetMapping("users/{id}/ratings")
+    public ResponseEntity<List> getUsersRatings(@PathVariable Long id) {
+        Optional<User> itemById = userRepo.findById(id);
+        if (itemById.isPresent()) {
+            return new ResponseEntity<List>(itemById.get().getRatings(), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
+        }
     }
 }

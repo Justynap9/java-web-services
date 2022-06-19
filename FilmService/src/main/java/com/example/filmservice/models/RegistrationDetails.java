@@ -1,22 +1,18 @@
-package com.example.usersmodule.models;
+package com.example.filmservice.models;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import javax.persistence.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-@Entity
-@Data
-@Table(name = "RegistrationDetails")
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 public class RegistrationDetails {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long regId;
     private LocalDateTime regDate = LocalDateTime.now();
 
