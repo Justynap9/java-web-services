@@ -21,10 +21,10 @@ public class User {
     private String lastName;
     private String login;
     private String birthDate;
-    private Boolean active;
+    private Boolean active = false;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "regId")
+    @JoinColumn(name = "userId")
     private RegistrationDetails regDetails;
 
     @OneToMany(fetch = FetchType.LAZY)

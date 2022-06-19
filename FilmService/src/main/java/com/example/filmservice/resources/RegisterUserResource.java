@@ -1,5 +1,6 @@
 package com.example.filmservice.resources;
 
+import com.example.filmservice.models.RegistrationDetails;
 import com.example.filmservice.models.User;
 import com.example.filmservice.requests.RegisterUserRequest;
 import lombok.RequiredArgsConstructor;

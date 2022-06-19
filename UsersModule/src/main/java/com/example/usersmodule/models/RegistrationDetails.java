@@ -17,6 +17,11 @@ public class RegistrationDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long regId;
+    private Long userId;
     private LocalDateTime regDate = LocalDateTime.now();
 
+    public RegistrationDetails(Long userId) {
+        this.userId = userId;
+        this.regDate = LocalDateTime.now();
+    }
 }

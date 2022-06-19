@@ -16,7 +16,7 @@ public class User {
     private String lastName;
     private String login;
     private String birthDate;
-    private Boolean active;
+    private Boolean active = false;
     private RegistrationDetails regDetails;
     private List<Rating> ratings;
 
