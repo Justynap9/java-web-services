@@ -24,7 +24,6 @@ public class User {
     private Boolean active = false;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "userId")
     private RegistrationDetails regDetails;
 
     @OneToMany(fetch = FetchType.LAZY)

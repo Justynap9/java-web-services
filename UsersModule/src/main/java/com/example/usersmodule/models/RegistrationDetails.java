@@ -17,10 +17,12 @@ public class RegistrationDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long regId;
-    private Long userId;
+    @OneToOne
+    @JoinColumn(name ="userId")
+    private User userId;
     private LocalDateTime regDate = LocalDateTime.now();
 
-    public RegistrationDetails(Long userId) {
+    public RegistrationDetails(User userId) {
         this.userId = userId;
         this.regDate = LocalDateTime.now();
     }
