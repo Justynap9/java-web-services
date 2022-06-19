@@ -20,7 +20,4 @@ public class RegistrationDetails {
     private Long regId;
     private LocalDateTime regDate = LocalDateTime.now();
 
-    public RegistrationDetails(Long regId) {
-        this.regId = regId;
-    }
 }

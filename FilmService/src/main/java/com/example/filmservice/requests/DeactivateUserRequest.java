@@ -4,6 +4,5 @@ import lombok.Getter;
 
 @Getter
 public class DeactivateUserRequest {
-    private String firstName;
-    private String lastName;
+    private String login;
 }

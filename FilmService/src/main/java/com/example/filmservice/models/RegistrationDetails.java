@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.persistence.GeneratedValue;
 import java.time.LocalDateTime;
 
 @AllArgsConstructor
@@ -18,5 +19,6 @@ public class RegistrationDetails {
 
     public RegistrationDetails(Long regId) {
         this.regId = regId;
+        this.regDate = LocalDateTime.now();
     }
 }

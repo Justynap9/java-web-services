@@ -12,12 +12,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RegisterUserRequest {
-    private Long userId;
     private String firstName;
     private String lastName;
     private String login;
     private String birthDate;
-    private Boolean active;
-    private RegistrationDetails regDetails;
-    private List<Rating> ratings;
 }

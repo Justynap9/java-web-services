@@ -22,7 +22,7 @@ public class UserStatusResource {
     public ResponseEntity activateUser(@RequestBody ActivateUserRequest activateuserRequest) {
         ResponseEntity<User[]> forEntity = restTemplate.getForEntity("http://localhost:8084/users", User[].class);
         for (User user: forEntity.getBody()) {
-            if (user.getFirstName().equals(activateuserRequest.getFirstName()) && user.getLastName().equals(activateuserRequest.getLastName())) {
+            if (user.getLogin().equals(activateuserRequest.getLogin())) {
                 user.setActive(true);
                 restTemplate.postForEntity("http://localhost:8084/users", user, ResponseEntity.class);
             }
@@ -34,7 +34,7 @@ public class UserStatusResource {
     public ResponseEntity deactivateUser(@RequestBody DeactivateUserRequest deactivateuserRequest) {
         ResponseEntity<User[]> forEntity = restTemplate.getForEntity("http://localhost:8084/users", User[].class);
         for (User user: forEntity.getBody()) {
-            if (user.getFirstName().equals(deactivateuserRequest.getFirstName()) && user.getLastName().equals(deactivateuserRequest.getLastName())) {
+            if (user.getLogin().equals(deactivateuserRequest.getLogin())) {
                 user.setActive(false);
                 restTemplate.postForEntity("http://localhost:8084/users", user, ResponseEntity.class);
             }
