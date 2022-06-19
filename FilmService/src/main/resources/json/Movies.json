@@ -1,0 +1,31 @@
+[{
+ "id": 1,
+ "title": "Avatar",
+ "description": "Jake, sparaliżowany były komandos, zostaje wysłany na planetę Pandora, gdzie zaprzyjaźnia się z lokalną społecznością i postanawia jej pomóc.",
+ "released_year": 2009,
+ "director": "James Cameron",
+ "runtime_min": 162,
+ "country": "USA",
+ "genres": [{"id": 1}]
+ },
+{
+ "id": 2,
+ "title": "Top Gun: Maverick",
+ "description": "Po ponad 20 latach służby w lotnictwie marynarki wojennej, Pete Maverick Mitchell zostaje wezwany do legendarnej szkoły Top Gun. ",
+ "released_year": 2022,
+ "director": "Joseph Kosinski",
+ "runtime_min": 131,
+ "country": "USA",
+ "genres": [{"id": 2}]
+ },
+{
+ "id": 3,
+ "title": "Diuna",
+ "description": "Szlachetny ród Atrydów przybywa na Diunę, będącą jedynym źródłem najcenniejszej substancji we wszechświecie.",
+ "released_year": 2021,
+ "director": "Denis Villeneuve",
+ "runtime_min": 155,
+ "country": "USA",
+ "genres": [{"id": 1}]
+ }]
+

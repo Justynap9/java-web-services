@@ -1,0 +1,13 @@
+[{
+    "userId":1,
+    "movieId":1,
+    "score": 5,
+    "review":"good movie"
+},
+{
+    "userId":1,
+    "movieId":2,
+    "score": 3,
+    "review":"boring"
+}]
+

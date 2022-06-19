@@ -25,8 +25,8 @@ public class UsersModuleApplication {
         return args -> {
             // read json and write to db
             ObjectMapper mapper = new ObjectMapper();
-            TypeReference<List<User>> typeReference = new TypeReference<List<User>>(){};
-            InputStream inputStream = TypeReference.class.getResourceAsStream("/json/users.json");
+            TypeReference<List<User>> typeReference = new TypeReference<>(){};
+            InputStream inputStream = TypeReference.class.getResourceAsStream("/json/Users.json");
             try {
                 List<User> users = mapper.readValue(inputStream,typeReference);
                 userService.saveUsers(users);
