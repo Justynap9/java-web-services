@@ -1,8 +1,6 @@
 # Java web services
 
-<img alt="GitHub top language" src="https://img.shields.io/github/languages/top/Justynap9/Java">
-<img alt="GitHub contributors" src="https://img.shields.io/github/contributors/Justynap9/Java"> 
-<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Justynap9/Java">
+<img alt="GitHub top language" src="https://img.shields.io/github/languages/top/Justynap9/Java"> <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/Justynap9/Java"> <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Justynap9/Java">
 
 
 <p align="center"> <img src="https://cdn-icons-png.flaticon.com/512/439/439163.png" width="130" height="130" /></p>
