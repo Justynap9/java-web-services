@@ -1,0 +1,14 @@
+[{"userId":"1",
+"firstName": "Jan", 
+"lastName":"Kowalski",
+"login":"JanKow11",
+"birthDate":"10-10-2003",
+"active": false
+},
+{"userId":"2",
+"firstName": "Jan", 
+"lastName":"Kowalski",
+"login":"JanKow15",
+"birthDate":"10-10-1950",
+"active": false
+}]
