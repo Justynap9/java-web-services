@@ -1,7 +1,7 @@
 package com.example.usersmodule.services;
 
 import com.example.usersmodule.models.User;
-import com.example.usersmodule.resources.UserRepo;
+import com.example.usersmodule.repository.UserRepo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

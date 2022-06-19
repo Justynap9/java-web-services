@@ -2,6 +2,8 @@ package com.example.filmservice.resources;
 
 import com.example.filmservice.models.Genre;
 import com.example.filmservice.models.Movie;
+import com.example.filmservice.repository.GenreRepo;
+import com.example.filmservice.repository.MovieRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

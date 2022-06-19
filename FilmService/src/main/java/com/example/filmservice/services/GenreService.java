@@ -1,7 +1,7 @@
 package com.example.filmservice.services;
 
 import com.example.filmservice.models.Genre;
-import com.example.filmservice.resources.GenreRepo;
+import com.example.filmservice.repository.GenreRepo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -16,7 +16,7 @@ public class CreateRatingResource {
 
     private final RestTemplate restTemplate;
 
-    @PostMapping("/create")
+    @PostMapping("/create-rating")
     public ResponseEntity createRating(@RequestBody CreateRatingRequest createratingRequest) {
         Rating rating = new Rating(createratingRequest.getUserId(), createratingRequest.getMovieId(),
                 createratingRequest.getScore(), createratingRequest.getReview());

@@ -1,6 +1,5 @@
 package com.example.filmservice.resources;
 
-import com.example.filmservice.models.RegistrationDetails;
 import com.example.filmservice.models.User;
 import com.example.filmservice.requests.RegisterUserRequest;
 import lombok.RequiredArgsConstructor;
@@ -17,11 +16,11 @@ public class RegisterUserResource {
 
     private final RestTemplate restTemplate;
 
-    @PostMapping("/register")
+    @PostMapping("/register-user")
     public ResponseEntity createUser(@RequestBody RegisterUserRequest registeruserRequest) {
         User user = new User(registeruserRequest.getFirstName(),
                 registeruserRequest.getLastName(), registeruserRequest.getLogin(),
-                registeruserRequest.getBirthDate());
+                registeruserRequest.getBirthDate(), registeruserRequest.getRegDate());
         restTemplate.postForEntity("http://localhost:8084/users", user, ResponseEntity.class);
         return new ResponseEntity(HttpStatus.OK);
 

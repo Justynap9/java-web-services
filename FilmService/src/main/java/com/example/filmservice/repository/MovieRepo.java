@@ -1,4 +1,4 @@
-package com.example.filmservice.resources;
+package com.example.filmservice.repository;
 
 import com.example.filmservice.models.Movie;
 import org.springframework.data.jpa.repository.JpaRepository;

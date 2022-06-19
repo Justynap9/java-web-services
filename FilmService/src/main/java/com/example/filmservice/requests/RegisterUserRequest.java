@@ -1,12 +1,9 @@
 package com.example.filmservice.requests;
 
-import com.example.filmservice.models.Rating;
-import com.example.filmservice.models.RegistrationDetails;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
-import java.util.List;
+import java.time.LocalDateTime;
 
 @Getter
 @AllArgsConstructor
@@ -16,4 +13,5 @@ public class RegisterUserRequest {
     private String lastName;
     private String login;
     private String birthDate;
+    private LocalDateTime regDate = LocalDateTime.now();
 }
