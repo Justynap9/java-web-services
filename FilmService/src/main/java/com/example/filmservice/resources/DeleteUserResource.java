@@ -14,7 +14,7 @@ public class DeleteUserResource {
 
     private final RestTemplate restTemplate;
 
-    @DeleteMapping("/users/{id}/delete")
+    @DeleteMapping("/delete-user/{id}")
     public ResponseEntity deleteUser(@PathVariable Long id) {
         restTemplate.delete("http://localhost:8084/users/{id}", id);
         return new ResponseEntity(HttpStatus.OK);

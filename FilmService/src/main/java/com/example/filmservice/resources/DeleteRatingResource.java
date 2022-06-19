@@ -14,7 +14,7 @@ public class DeleteRatingResource {
 
     private final RestTemplate restTemplate;
 
-    @DeleteMapping("/rating/{id}/delete")
+    @DeleteMapping("/delete-rating/{id}")
     public ResponseEntity deleteRating(@PathVariable Long id) {
         restTemplate.delete("http://localhost:8084/ratings/{id}", id);
         return new ResponseEntity(HttpStatus.OK);

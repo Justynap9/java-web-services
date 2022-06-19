@@ -1,8 +1,9 @@
 package com.example.usersmodule.resources;
 
-import com.example.usersmodule.models.RegistrationDetails;
 import com.example.usersmodule.models.User;
 import com.example.usersmodule.models.Rating;
+import com.example.usersmodule.repository.RatingRepo;
+import com.example.usersmodule.repository.UserRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,8 +19,6 @@ public class UserResource {
     private final
     UserRepo userRepo;
 
-    private final
-    RegistrationRepo registrationRepo;
 
     private final
     RatingRepo ratingRepo;
@@ -54,27 +53,6 @@ public class UserResource {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @GetMapping("registration-details/{id}")
-    public ResponseEntity<RegistrationDetails> getGenre(@PathVariable Long id) {
-        Optional<RegistrationDetails> itemById = registrationRepo.findById(id);
-        if (itemById.isPresent()) {
-            return new ResponseEntity<>(itemById.get(), HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-
-        }
-    }
-    @PostMapping("/registration-details")
-    public ResponseEntity createRegistration(@RequestBody RegistrationDetails registration) {
-        registrationRepo.saveAndFlush(registration);
-        return new ResponseEntity<>(HttpStatus.CREATED);
-    }
-
-    @DeleteMapping("registration-details/{id}")
-    public ResponseEntity deleteRegistrationInfo(@PathVariable Long id) {
-        registrationRepo.deleteById(id);
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
 
     @GetMapping("/ratings")
     public ResponseEntity<List> getRatings(){

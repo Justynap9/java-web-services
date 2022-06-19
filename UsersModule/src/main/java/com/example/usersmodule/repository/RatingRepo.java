@@ -1,4 +1,4 @@
-package com.example.usersmodule.resources;
+package com.example.usersmodule.repository;
 
 import com.example.usersmodule.models.Rating;
 import org.springframework.data.jpa.repository.JpaRepository;

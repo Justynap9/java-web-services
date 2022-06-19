@@ -16,12 +16,11 @@ public class RegisterUserResource {
 
     private final RestTemplate restTemplate;
 
-    @PostMapping("/register")
+    @PostMapping("/register-user")
     public ResponseEntity createUser(@RequestBody RegisterUserRequest registeruserRequest) {
-        User user = new User(registeruserRequest.getUserId(), registeruserRequest.getFirstName(),
+        User user = new User(registeruserRequest.getFirstName(),
                 registeruserRequest.getLastName(), registeruserRequest.getLogin(),
-                registeruserRequest.getBirthDate(), registeruserRequest.getActive(), registeruserRequest.getRegDetails(),
-                registeruserRequest.getRatings());
+                registeruserRequest.getBirthDate(), registeruserRequest.getRegDate());
         restTemplate.postForEntity("http://localhost:8084/users", user, ResponseEntity.class);
         return new ResponseEntity(HttpStatus.OK);
 

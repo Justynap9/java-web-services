@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -21,11 +22,9 @@ public class User {
     private String lastName;
     private String login;
     private String birthDate;
-    private Boolean active;
+    private Boolean active = false;
+    private LocalDateTime regDate = LocalDateTime.now();
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "regId")
-    private RegistrationDetails regDetails;
 
     @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "userId")
@@ -79,12 +78,12 @@ public class User {
         this.active = active;
     }
 
-    public RegistrationDetails getRegDetails() {
-        return regDetails;
+    public LocalDateTime getRegDate() {
+        return regDate;
     }
 
-    public void setRegDetails(RegistrationDetails regDetails) {
-        this.regDetails = regDetails;
+    public void setRegDate(LocalDateTime regDate) {
+        this.regDate = regDate;
     }
 
     public List<Rating> getRatings() {
@@ -94,4 +93,6 @@ public class User {
     public void setRatings(List<Rating> ratings) {
         this.ratings = ratings;
     }
+
+
 }

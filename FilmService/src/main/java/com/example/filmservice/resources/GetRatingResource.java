@@ -16,13 +16,13 @@ public class GetRatingResource {
 
     private final RestTemplate restTemplate;
 
-    @GetMapping("/show")
+    @GetMapping("/show-rating")
     public ResponseEntity <List> showRating() {
         return restTemplate.getForEntity("http://localhost:8084/ratings", List.class);
     }
 
 
-    @GetMapping("/show/id/{id}")
+    @GetMapping("/ratings/show/id/{id}")
     public Object getRatingByID(@PathVariable Long id){
         Object rating =  restTemplate.getForObject("http://localhost:8084/ratings/{id}", Object.class, id);
         return rating;
