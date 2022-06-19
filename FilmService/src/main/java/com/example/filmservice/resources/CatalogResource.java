@@ -84,7 +84,9 @@ public class CatalogResource {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-
-
+    @GetMapping("genre/{name}/movies")
+    public ResponseEntity movieByGenre(@PathVariable String name){
+        return new ResponseEntity(movieRepo.findMoviesbyGenre(name), HttpStatus.OK);
+    }
 
 }
